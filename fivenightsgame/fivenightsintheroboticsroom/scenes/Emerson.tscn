@@ -1,0 +1,283 @@
+[gd_scene load_steps=12 format=3 uid="uid://danvyrxuyk6im"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_if22f"]
+[ext_resource type="Script" path="res://scripts/character_body_3d.gd" id="1_xlakk"]
+[ext_resource type="Texture2D" uid="uid://bgqcqpadadvol" path="res://newarrow.png" id="2_cvw1f"]
+[ext_resource type="Script" path="res://scripts/doorright.gd" id="3_8lnp3"]
+[ext_resource type="Texture2D" uid="uid://belpmp10yauth" path="res://door.png" id="4_n8sj8"]
+[ext_resource type="Script" path="res://scripts/doorleft.gd" id="6_oirdo"]
+
+[sub_resource type="Environment" id="Environment_qxdrk"]
+background_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6wwk"]
+albedo_texture = ExtResource("4_n8sj8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qwerx"]
+albedo_color = Color(1, 0, 0, 1)
+metallic = 0.74
+metallic_specular = 0.4
+roughness = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_euq7m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27vve"]
+albedo_color = Color(1, 0, 0, 1)
+metallic = 0.74
+metallic_specular = 0.4
+roughness = 0.7
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_if22f")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.998135, 0.0610485, 0, -0.0610485, 0.998135, 0, 0.462565, 0)
+script = ExtResource("1_xlakk")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+
+[node name="Control" type="Control" parent="CharacterBody3D/Camera3D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody3D/Camera3D/Control"]
+layout_mode = 0
+offset_top = 264.0
+offset_right = 88.0
+offset_bottom = 822.0
+texture = ExtResource("2_cvw1f")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CharacterBody3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 1828.0
+offset_top = 264.0
+offset_right = 1916.0
+offset_bottom = 822.0
+texture = ExtResource("2_cvw1f")
+expand_mode = 1
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="CharacterBody3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 1270.0
+offset_top = 1000.0
+offset_right = 1346.0
+offset_bottom = 1558.0
+rotation = 1.5708
+texture = ExtResource("2_cvw1f")
+expand_mode = 1
+flip_h = true
+
+[node name="Container" type="HBoxContainer" parent="CharacterBody3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 927.0
+offset_right = 384.0
+offset_bottom = 995.0
+theme_override_constants/separation = 10
+
+[node name="1" type="ColorRect" parent="CharacterBody3D/Camera3D/Control/Container"]
+custom_minimum_size = Vector2(42.5, 0)
+layout_mode = 2
+
+[node name="2" type="ColorRect" parent="CharacterBody3D/Camera3D/Control/Container"]
+custom_minimum_size = Vector2(42.5, 0)
+layout_mode = 2
+color = Color(1, 1, 0.321569, 1)
+
+[node name="3" type="ColorRect" parent="CharacterBody3D/Camera3D/Control/Container"]
+custom_minimum_size = Vector2(42.5, 0)
+layout_mode = 2
+color = Color(1, 0.541176, 0.207843, 1)
+
+[node name="4" type="ColorRect" parent="CharacterBody3D/Camera3D/Control/Container"]
+custom_minimum_size = Vector2(42.5, 0)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Usage" type="Label" parent="CharacterBody3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 925.0
+offset_right = 163.0
+offset_bottom = 989.0
+theme_override_font_sizes/font_size = 46
+text = "Usage:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Power" type="Label" parent="CharacterBody3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 1000.0
+offset_right = 163.0
+offset_bottom = 1064.0
+theme_override_font_sizes/font_size = 46
+text = "Power: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D"]
+light_energy = 7.347
+light_indirect_energy = 2.556
+light_volumetric_fog_energy = 1.333
+shadow_enabled = true
+shadow_blur = 1.278
+spot_angle = 47.132
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qxdrk")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -4)
+size = Vector3(11, 1, 15)
+
+[node name="Roof" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89481, -4)
+size = Vector3(11, 0.155151, 15)
+
+[node name="Desk" type="Node3D" parent="."]
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -0.95896, -0.390289, -1.14367)
+size = Vector3(0.5, 0.7, 0.1)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 0.94104, -0.390289, -1.14367)
+size = Vector3(0.5, 0.7, 0.1)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -0.00896037, 0.00971058, -1.14367)
+size = Vector3(0.5, 0.1, 2)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -0.00896038, -0.240289, -1.34367)
+size = Vector3(0.1, 0.6, 2)
+
+[node name="ClockBase" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.32743e-09, 0, 0.4875, -0.099, -7.15993e-09, -2.13093e-08, 4.32743e-09, -0.1638, 9.31459e-16, 0.82716, 0.13812, -0.977669)
+polygon = PackedVector2Array(0, 0, -1, 1, 1, 1, 1, 0)
+
+[node name="Clock" type="Label3D" parent="ClockBase"]
+transform = Transform3D(-4.41529e-07, -5.05051, -8.74773, -6.69663e-21, 5.28709, -3.0525, 2.05128, -4.48322e-08, -7.76517e-08, -0.540607, 0.478721, -0.493329)
+text = "12:00"
+
+[node name="Second" type="Timer" parent="ClockBase"]
+autostart = true
+
+[node name="RightSide" type="Node3D" parent="."]
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="RightSide"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 3.18679, 0.308624, 0.578194)
+size = Vector3(2.17657, 1.61725, 0.1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="RightSide"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 2.73823, 1.49438, -1.09586)
+size = Vector3(5.68771, 0.759111, 0.1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="RightSide"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 2.35225, 0.308624, -2.53633)
+size = Vector3(2.70239, 1.61725, 0.1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="RightSide"]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 2.00682, 0.712417, -7.32156)
+size = Vector3(7.87225, 2.42484, 0.301996)
+
+[node name="DoorRight" type="Node3D" parent="RightSide"]
+script = ExtResource("3_8lnp3")
+
+[node name="Frame1" type="CSGBox3D" parent="RightSide/DoorRight"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 2.56844, 0.308624, -1.34376)
+size = Vector3(0.286621, 1.61725, 0.299683)
+
+[node name="Frame2" type="CSGBox3D" parent="RightSide/DoorRight"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 2.82726, 0.308624, -0.377838)
+size = Vector3(0.286621, 1.61725, 0.299683)
+
+[node name="Frame3" type="CSGBox3D" parent="RightSide/DoorRight"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 2.6978, 1.2432, -0.860978)
+size = Vector3(1.28699, 0.256748, 0.299683)
+
+[node name="MovingPart" type="CSGBox3D" parent="RightSide/DoorRight"]
+transform = Transform3D(-0.258819, 2.26267e-08, -0.965926, -8.74228e-08, -1, 0, -0.965926, 8.44439e-08, 0.258819, 2.6959, 0.312868, -0.861999)
+size = Vector3(0.778377, 1.59684, 0.155627)
+material = SubResource("StandardMaterial3D_q6wwk")
+
+[node name="ButtonBase" type="CSGBox3D" parent="RightSide/DoorRight"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 3.05846, 0.320734, 0.0772931)
+size = Vector3(0.286621, 0.299881, 0.215149)
+
+[node name="ButtonR" type="CSGBox3D" parent="RightSide/DoorRight"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 3.051, 0.317443, 0.0774593)
+size = Vector3(0.227173, 0.234629, 0.229645)
+material = SubResource("StandardMaterial3D_qwerx")
+
+[node name="Area3D" type="Area3D" parent="RightSide/DoorRight/ButtonR"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightSide/DoorRight/ButtonR/Area3D"]
+transform = Transform3D(0.245, 0, -4.01587e-08, 0, 0.245, 0, 4.01587e-08, 0, 0.245, 0, 0, 0)
+shape = SubResource("BoxShape3D_euq7m")
+
+[node name="LeftSide" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="LeftSide"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 3.18679, 0.308624, 0.578194)
+size = Vector3(2.17657, 1.61725, 0.1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="LeftSide"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 2.73823, 1.49438, -1.09586)
+size = Vector3(5.68771, 0.759111, 0.1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="LeftSide"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 2.35225, 0.308624, -2.53633)
+size = Vector3(2.70239, 1.61725, 0.1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="LeftSide"]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 2.00682, 0.712417, -7.32156)
+size = Vector3(7.87225, 2.42484, 0.301996)
+
+[node name="DoorLeft" type="Node3D" parent="LeftSide"]
+script = ExtResource("6_oirdo")
+
+[node name="Frame1" type="CSGBox3D" parent="LeftSide/DoorLeft"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 2.56844, 0.308624, -1.34376)
+size = Vector3(0.286621, 1.61725, 0.299683)
+
+[node name="Frame2" type="CSGBox3D" parent="LeftSide/DoorLeft"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 2.82726, 0.308624, -0.377838)
+size = Vector3(0.286621, 1.61725, 0.299683)
+
+[node name="Frame3" type="CSGBox3D" parent="LeftSide/DoorLeft"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 2.6978, 1.2432, -0.860978)
+size = Vector3(1.28699, 0.256748, 0.299683)
+
+[node name="MovingPart" type="CSGBox3D" parent="LeftSide/DoorLeft"]
+transform = Transform3D(-0.258819, 2.26267e-08, -0.965926, -8.74228e-08, -1, 0, -0.965926, 8.44439e-08, 0.258819, 2.6959, 0.312868, -0.861999)
+size = Vector3(0.778377, 1.59684, 0.155627)
+material = SubResource("StandardMaterial3D_q6wwk")
+
+[node name="ButtonBase" type="CSGBox3D" parent="LeftSide/DoorLeft"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 3.05846, 0.320734, 0.0772931)
+size = Vector3(0.286621, 0.299881, 0.215149)
+
+[node name="ButtonL" type="CSGBox3D" parent="LeftSide/DoorLeft"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 3.051, 0.317443, 0.0774593)
+size = Vector3(0.227173, 0.234629, 0.229645)
+material = SubResource("StandardMaterial3D_27vve")
+
+[node name="Area3D" type="Area3D" parent="LeftSide/DoorLeft/ButtonL"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftSide/DoorLeft/ButtonL/Area3D"]
+transform = Transform3D(0.245, 0, -4.01587e-08, 0, 0.245, 0, 4.01587e-08, 0, 0.245, 0, 0, 0)
+shape = SubResource("BoxShape3D_euq7m")
+
+[connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect" to="CharacterBody3D" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect2" to="CharacterBody3D" method="_on_texture_rect_2_mouse_entered"]
+[connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect3" to="CharacterBody3D" method="_on_texture_rect_3_mouse_entered"]
+[connection signal="timeout" from="ClockBase/Second" to="." method="_on_second_timeout"]
+[connection signal="input_event" from="RightSide/DoorRight/ButtonR/Area3D" to="RightSide/DoorRight" method="_on_area_3d_input_event"]
+[connection signal="input_event" from="LeftSide/DoorLeft/ButtonL/Area3D" to="LeftSide/DoorLeft" method="_on_area_3d_input_event"]
