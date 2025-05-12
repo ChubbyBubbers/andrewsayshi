@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqra13de8irvm"]
+
+[ext_resource type="Script" path="res://Scripts/draggable_box.tres.gd" id="1_3d2wb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("1_3d2wb")
+
+[node name="Button" type="Button" parent="StaticBody2D"]
+offset_right = 8.0
+offset_bottom = 8.0

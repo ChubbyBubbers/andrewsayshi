@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5k04t2qjbv6t"]
+
+[ext_resource type="Script" path="res://Scripts/conveyor.gd" id="1_fyv7g"]
+[ext_resource type="Texture2D" uid="uid://cdmon3o1bp5v3" path="res://Conveyor.png" id="2_thymh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30qai"]
+atlas = ExtResource("2_thymh")
+region = Rect2(0, 0, 500, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0boke"]
+size = Vector2(10002, 900)
+
+[node name="Conveyor" type="Area2D"]
+script = ExtResource("1_fyv7g")
+speed = 500
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(-10, -10)
+scale = Vector2(20, 20)
+texture = SubResource("AtlasTexture_30qai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, -10)
+shape = SubResource("RectangleShape2D_0boke")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
