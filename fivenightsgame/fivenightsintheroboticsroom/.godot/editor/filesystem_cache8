@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1747073242
+arrow.png::CompressedTexture2D::8051972619090051462::1745347310::1745347310::1::::<><>::
+door.png::CompressedTexture2D::2690817227141392253::1746036773::1746036781::1::::<><>::
+icon.svg::CompressedTexture2D::7051364157892527078::1745345253::1745346362::1::::<><>::
+newarrow.png::CompressedTexture2D::2840734584260964147::1745604510::1745604510::1::::<><>::
+::res://scenes/::1746816703
+Emerson.tscn::PackedScene::7187417807152557224::1746816702::0::1::::<><>::res://scripts/game.gd<>res://scripts/character_body_3d.gd<>uid://bgqcqpadadvol::::res://newarrow.png<>res://scripts/doorright.gd<>uid://belpmp10yauth::::res://door.png<>res://scripts/doorleft.gd
+::res://scripts/::1746816638
+character_body_3d.gd::GDScript::-1::1746813683::0::1::::<>CharacterBody3D<>::
+doorleft.gd::GDScript::-1::1746816453::0::1::::<>Node3D<>::
+doorright.gd::GDScript::-1::1746816453::0::1::::<>Node3D<>::
+game.gd::GDScript::-1::1746816638::0::1::::<>Node3D<>::
