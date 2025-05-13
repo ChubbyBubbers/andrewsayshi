@@ -3,7 +3,6 @@ extends Node3D
 @onready var originCam = $"../CharacterBody3D/Camera3D"
 @onready var cam1 = $Cam1
 @onready var player = $"../CharacterBody3D"
-@onready var exitButton = $"../CharacterBody3D/Camera3D/Control/ExitButton"
 
 @onready var activeCam = $Cam1
 var inProcess = false

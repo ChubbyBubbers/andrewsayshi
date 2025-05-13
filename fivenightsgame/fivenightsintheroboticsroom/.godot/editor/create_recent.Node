@@ -1,4 +1,6 @@
 Button
+Control
+TextureRect
 SpotLight3D
 Node3D
 Label3D
@@ -9,7 +11,4 @@ Camera3D
 Timer
 Label
 Panel
-Control
 SubViewport
-CSGPolygon3D
-HBoxContainer
