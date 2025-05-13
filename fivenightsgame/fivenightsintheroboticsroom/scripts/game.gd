@@ -68,7 +68,6 @@ func _update_power(delta: float) -> void:
 	power = power - 1*rate*delta
 	power = clamp(power, 0, 100)
 	powerLabel.text = "Power: " + str(int(power)) + "%"
-	print(power)
 
 func _win() -> void:
 	print("you win wowwwwwwwwwwwww")

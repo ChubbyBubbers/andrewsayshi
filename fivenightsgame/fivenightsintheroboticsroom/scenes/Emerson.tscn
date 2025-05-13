@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://danvyrxuyk6im"]
+[gd_scene load_steps=18 format=3 uid="uid://danvyrxuyk6im"]
 
 [ext_resource type="Script" uid="uid://c3vdbyprl2ee7" path="res://scripts/game.gd" id="1_if22f"]
 [ext_resource type="Script" uid="uid://u34gnsji6rc8" path="res://scripts/character_body_3d.gd" id="1_xlakk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b0xghl5aal1ls" path="res://scripts/doorright.gd" id="3_8lnp3"]
 [ext_resource type="Texture2D" uid="uid://belpmp10yauth" path="res://door.png" id="4_n8sj8"]
 [ext_resource type="Script" uid="uid://hit2y565eqwy" path="res://scripts/doorleft.gd" id="6_oirdo"]
+[ext_resource type="Script" uid="uid://cjxvgl5wqvchd" path="res://scripts/camera_system.gd" id="7_omgmk"]
 
 [sub_resource type="Environment" id="Environment_qxdrk"]
 background_mode = 1
@@ -26,6 +27,21 @@ albedo_color = Color(1, 0, 0, 1)
 metallic = 0.74
 metallic_specular = 0.4
 roughness = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cpm77"]
+size = Vector3(1.03844, 0.0773315, 0.474873)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpm77"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 0.27
+metallic_specular = 0.37
+roughness = 0.35
+
+[sub_resource type="BoxMesh" id="BoxMesh_omgmk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omgmk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ibxbd"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_if22f")
@@ -119,6 +135,15 @@ theme_override_font_sizes/font_size = 46
 text = "Power: 100%"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="CharacterBody3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 16.0
+offset_right = 359.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 86
+text = "Exit"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D"]
 light_energy = 7.347
@@ -275,9 +300,60 @@ material = SubResource("StandardMaterial3D_27vve")
 transform = Transform3D(0.245, 0, -4.01587e-08, 0, 0.245, 0, 4.01587e-08, 0, 0.245, 0, 0, 0)
 shape = SubResource("BoxShape3D_euq7m")
 
+[node name="CameraSystem" type="Node3D" parent="."]
+script = ExtResource("7_omgmk")
+
+[node name="Cam1" type="Camera3D" parent="CameraSystem"]
+transform = Transform3D(-0.937925, 0.125876, -0.323189, 3.1728e-08, 0.931818, 0.362926, 0.346837, 0.340397, -0.873976, 0, -5.17854, -4.599)
+
+[node name="Area3D" type="Area3D" parent="CameraSystem"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraSystem/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21891, 0.0855408, -1.12717)
+shape = SubResource("BoxShape3D_cpm77")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraSystem/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.103354, 0, 0, 0, 0.473143, -0.218955, 0.0388708, -1.14757)
+material_override = SubResource("StandardMaterial3D_cpm77")
+mesh = SubResource("BoxMesh_omgmk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CameraSystem/Area3D"]
+transform = Transform3D(0.230512, 0, 0, 0, 0.0398133, 0, 0, 0, 0.190769, 0.139206, 0.0787098, -1.03729)
+material_override = SubResource("StandardMaterial3D_omgmk")
+mesh = SubResource("BoxMesh_ibxbd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="CameraSystem/Area3D"]
+transform = Transform3D(0.230512, 0, 0, 0, 0.0398133, 0, 0, 0, 0.0856869, 0.139206, 0.0787098, -1.29543)
+material_override = SubResource("StandardMaterial3D_omgmk")
+mesh = SubResource("BoxMesh_ibxbd")
+
+[node name="Label3D" type="Label3D" parent="CameraSystem/Area3D"]
+transform = Transform3D(0.602479, -0.117304, -7.57462e-09, -5.24816e-16, -2.95897e-08, 1, -0.106006, -0.666693, -4.30501e-08, -0.346653, 0.0950744, -1.13749)
+text = "cameras lol"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CameraSystem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -3.94867, -2.58008)
+
+[node name="Cam1Stuffs" type="Node3D" parent="."]
+
+[node name="Floor2" type="CSGBox3D" parent="Cam1Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.20476, -1.73792)
+size = Vector3(11, 1, 15)
+
+[node name="Box" type="CSGBox3D" parent="Cam1Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.634361, -6.07557, 0.444208)
+size = Vector3(6.74144, 2.72308, 3.91895)
+
+[node name="Box2" type="CSGBox3D" parent="Cam1Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84282, -6.07557, -2.13746)
+size = Vector3(3.0122, 2.72308, 9.08228)
+
+[connection signal="input_event" from="CharacterBody3D" to="CameraSystem" method="_on_character_body_3d_input_event"]
 [connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect" to="CharacterBody3D" method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect2" to="CharacterBody3D" method="_on_texture_rect_2_mouse_entered"]
 [connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect3" to="CharacterBody3D" method="_on_texture_rect_3_mouse_entered"]
+[connection signal="pressed" from="CharacterBody3D/Camera3D/Control/ExitButton" to="CameraSystem" method="_on_exit_button_pressed"]
 [connection signal="timeout" from="ClockBase/Second" to="." method="_on_second_timeout"]
 [connection signal="input_event" from="RightSide/DoorRight/ButtonR/Area3D" to="RightSide/DoorRight" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="LeftSide/DoorLeft/ButtonL/Area3D" to="LeftSide/DoorLeft" method="_on_area_3d_input_event"]
+[connection signal="input_event" from="CameraSystem/Area3D" to="CameraSystem" method="_on_area_3d_input_event"]

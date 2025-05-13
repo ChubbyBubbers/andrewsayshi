@@ -4,9 +4,10 @@ extends CharacterBody3D
 @onready var left = $Camera3D/Control/TextureRect
 @onready var right = $Camera3D/Control/TextureRect2
 @onready var down = $Camera3D/Control/TextureRect3
+@onready var exitButton = $Camera3D/Control/ExitButton
 
 @export var state = 2
-var inProcess = false
+@export var inProcess = false
 var downTopPos = Vector2(1270, 1000)
 var downBotPos = Vector2(1270, 0)
 
@@ -34,12 +35,16 @@ func _unhideAll() -> void:
 func _process(delta: float) -> void:
 	if inProcess == true:
 		_hideAll()
+	elif state == -1:
+		_hideAll()
+		_unhide(exitButton)
 	elif state == 1:
 		_hide(left)
 		_unhide(right)
 		_hide(down)
 	elif state == 2:
 		_unhideAll()
+		_hide(exitButton)
 	elif state == 3:
 		_unhide(left)
 		_hide(right)
