@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://danvyrxuyk6im"]
+[gd_scene load_steps=22 format=3 uid="uid://danvyrxuyk6im"]
 
 [ext_resource type="Script" uid="uid://c3vdbyprl2ee7" path="res://scripts/game.gd" id="1_if22f"]
 [ext_resource type="Script" uid="uid://u34gnsji6rc8" path="res://scripts/character_body_3d.gd" id="1_xlakk"]
@@ -6,10 +6,16 @@
 [ext_resource type="Script" uid="uid://b0xghl5aal1ls" path="res://scripts/doorright.gd" id="3_8lnp3"]
 [ext_resource type="Texture2D" uid="uid://bcaju3fq7w2wo" path="res://MapGOOD.png" id="4_ibxbd"]
 [ext_resource type="Texture2D" uid="uid://belpmp10yauth" path="res://door.png" id="4_n8sj8"]
+[ext_resource type="Texture2D" uid="uid://baejb4a6xlo2t" path="res://icon.png" id="5_uobvl"]
 [ext_resource type="Script" uid="uid://hit2y565eqwy" path="res://scripts/doorleft.gd" id="6_oirdo"]
 [ext_resource type="Script" uid="uid://cjxvgl5wqvchd" path="res://scripts/camera_system.gd" id="7_omgmk"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ibxbd"]
+
+[sub_resource type="Theme" id="Theme_ibxbd"]
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 0.764706)
+Button/colors/icon_normal_color = Color(1, 1, 1, 0.364706)
 
 [sub_resource type="Environment" id="Environment_qxdrk"]
 background_mode = 1
@@ -161,17 +167,18 @@ offset_bottom = 175.0
 theme_override_font_sizes/font_size = 86
 text = "Exit"
 
-[node name="Button" type="Button" parent="CharacterBody3D/Camera3D/Control/CamSystemUI"]
+[node name="Cam1" type="Button" parent="CharacterBody3D/Camera3D/Control/CamSystemUI"]
 material = SubResource("CanvasItemMaterial_ibxbd")
 layout_mode = 0
 offset_left = 1239.0
 offset_top = 66.0
-offset_right = 1361.0
-offset_bottom = 159.0
-theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+offset_right = 1347.0
+offset_bottom = 174.0
+theme = SubResource("Theme_ibxbd")
+theme_override_font_sizes/font_size = 46
+text = "C1"
+icon = ExtResource("5_uobvl")
+icon_alignment = 1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D"]
 light_energy = 7.347
