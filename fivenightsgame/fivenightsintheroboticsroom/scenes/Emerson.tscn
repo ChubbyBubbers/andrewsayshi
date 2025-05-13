@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://danvyrxuyk6im"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_if22f"]
-[ext_resource type="Script" path="res://scripts/character_body_3d.gd" id="1_xlakk"]
+[ext_resource type="Script" uid="uid://c3vdbyprl2ee7" path="res://scripts/game.gd" id="1_if22f"]
+[ext_resource type="Script" uid="uid://u34gnsji6rc8" path="res://scripts/character_body_3d.gd" id="1_xlakk"]
 [ext_resource type="Texture2D" uid="uid://bgqcqpadadvol" path="res://newarrow.png" id="2_cvw1f"]
-[ext_resource type="Script" path="res://scripts/doorright.gd" id="3_8lnp3"]
+[ext_resource type="Script" uid="uid://b0xghl5aal1ls" path="res://scripts/doorright.gd" id="3_8lnp3"]
 [ext_resource type="Texture2D" uid="uid://belpmp10yauth" path="res://door.png" id="4_n8sj8"]
-[ext_resource type="Script" path="res://scripts/doorleft.gd" id="6_oirdo"]
+[ext_resource type="Script" uid="uid://hit2y565eqwy" path="res://scripts/doorleft.gd" id="6_oirdo"]
 
 [sub_resource type="Environment" id="Environment_qxdrk"]
 background_mode = 1
