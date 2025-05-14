@@ -13,8 +13,9 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ibxbd"]
 
 [sub_resource type="Theme" id="Theme_ibxbd"]
-Button/colors/icon_focus_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_color = Color(1, 1, 1, 0.764706)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.364706)
+Button/colors/icon_focus_color = Color(1, 1, 1, 0.364706)
+Button/colors/icon_hover_color = Color(1, 1, 1, 0.364706)
 Button/colors/icon_normal_color = Color(1, 1, 1, 0.364706)
 
 [sub_resource type="Environment" id="Environment_qxdrk"]
@@ -165,6 +166,7 @@ offset_top = 16.0
 offset_right = 359.0
 offset_bottom = 175.0
 theme_override_font_sizes/font_size = 86
+action_mode = 0
 text = "Exit"
 
 [node name="Cam1" type="Button" parent="CharacterBody3D/Camera3D/Control/CamSystemUI"]
@@ -176,7 +178,84 @@ offset_right = 1347.0
 offset_bottom = 174.0
 theme = SubResource("Theme_ibxbd")
 theme_override_font_sizes/font_size = 46
+toggle_mode = true
+action_mode = 0
 text = "C1"
+icon = ExtResource("5_uobvl")
+icon_alignment = 1
+
+[node name="Cam2" type="Button" parent="CharacterBody3D/Camera3D/Control/CamSystemUI"]
+material = SubResource("CanvasItemMaterial_ibxbd")
+layout_mode = 0
+offset_left = 1561.0
+offset_top = 29.0
+offset_right = 1669.0
+offset_bottom = 137.0
+theme = SubResource("Theme_ibxbd")
+theme_override_font_sizes/font_size = 46
+toggle_mode = true
+action_mode = 0
+text = "C2"
+icon = ExtResource("5_uobvl")
+icon_alignment = 1
+
+[node name="Cam3" type="Button" parent="CharacterBody3D/Camera3D/Control/CamSystemUI"]
+material = SubResource("CanvasItemMaterial_ibxbd")
+layout_mode = 0
+offset_left = 1784.0
+offset_top = 135.0
+offset_right = 1892.0
+offset_bottom = 243.0
+theme = SubResource("Theme_ibxbd")
+theme_override_font_sizes/font_size = 46
+toggle_mode = true
+action_mode = 0
+text = "C3"
+icon = ExtResource("5_uobvl")
+icon_alignment = 1
+
+[node name="Cam4" type="Button" parent="CharacterBody3D/Camera3D/Control/CamSystemUI"]
+material = SubResource("CanvasItemMaterial_ibxbd")
+layout_mode = 0
+offset_left = 1767.0
+offset_top = 329.0
+offset_right = 1875.0
+offset_bottom = 437.0
+theme = SubResource("Theme_ibxbd")
+theme_override_font_sizes/font_size = 46
+toggle_mode = true
+action_mode = 0
+text = "C4"
+icon = ExtResource("5_uobvl")
+icon_alignment = 1
+
+[node name="Cam5" type="Button" parent="CharacterBody3D/Camera3D/Control/CamSystemUI"]
+material = SubResource("CanvasItemMaterial_ibxbd")
+layout_mode = 0
+offset_left = 1550.0
+offset_top = 164.0
+offset_right = 1658.0
+offset_bottom = 272.0
+theme = SubResource("Theme_ibxbd")
+theme_override_font_sizes/font_size = 46
+toggle_mode = true
+action_mode = 0
+text = "C5"
+icon = ExtResource("5_uobvl")
+icon_alignment = 1
+
+[node name="Cam6" type="Button" parent="CharacterBody3D/Camera3D/Control/CamSystemUI"]
+material = SubResource("CanvasItemMaterial_ibxbd")
+layout_mode = 0
+offset_left = 1304.0
+offset_top = 330.0
+offset_right = 1412.0
+offset_bottom = 438.0
+theme = SubResource("Theme_ibxbd")
+theme_override_font_sizes/font_size = 46
+toggle_mode = true
+action_mode = 0
+text = "C6"
 icon = ExtResource("5_uobvl")
 icon_alignment = 1
 
@@ -388,6 +467,7 @@ size = Vector3(3.0122, 2.72308, 9.08228)
 [connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect2" to="CharacterBody3D" method="_on_texture_rect_2_mouse_entered"]
 [connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect3" to="CharacterBody3D" method="_on_texture_rect_3_mouse_entered"]
 [connection signal="pressed" from="CharacterBody3D/Camera3D/Control/CamSystemUI/ExitButton" to="CameraSystem" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CharacterBody3D/Camera3D/Control/CamSystemUI/Cam1" to="CameraSystem" method="_on_camera_button_pressed"]
 [connection signal="timeout" from="ClockBase/Second" to="." method="_on_second_timeout"]
 [connection signal="input_event" from="RightSide/DoorRight/ButtonR/Area3D" to="RightSide/DoorRight" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="LeftSide/DoorLeft/ButtonL/Area3D" to="LeftSide/DoorLeft" method="_on_area_3d_input_event"]

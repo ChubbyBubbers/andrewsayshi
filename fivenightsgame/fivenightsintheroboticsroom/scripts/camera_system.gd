@@ -8,6 +8,8 @@ extends Node3D
 @onready var camObject = $Area3D
 
 @onready var activeCam = $Cam1
+func _ready() -> void:
+	pass
 
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
@@ -30,7 +32,12 @@ func _on_exit_button_pressed() -> void:
 	active = false
 	player.inProcess = false
 
-# use a button system where buttons are togglable and 
+# - use a button system where buttons are togglable and 
 # are disabled after clicking them (reenable disabled buttons)
 # that way they stay looking selected
-# make animation FIRST PLSSSSS
+# - make all connect to one func
+# - make animation FIRST PLSSSSS
+
+
+func _on_camera_button_pressed(camButton: ButtonGroup) -> void:
+	camButton.disabled = true
