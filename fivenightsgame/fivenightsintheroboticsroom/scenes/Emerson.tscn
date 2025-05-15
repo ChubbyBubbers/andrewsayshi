@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://danvyrxuyk6im"]
+[gd_scene load_steps=23 format=3 uid="uid://danvyrxuyk6im"]
 
 [ext_resource type="Script" uid="uid://c3vdbyprl2ee7" path="res://scripts/game.gd" id="1_if22f"]
 [ext_resource type="Script" uid="uid://u34gnsji6rc8" path="res://scripts/character_body_3d.gd" id="1_xlakk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b0xghl5aal1ls" path="res://scripts/doorright.gd" id="3_8lnp3"]
 [ext_resource type="Texture2D" uid="uid://bcaju3fq7w2wo" path="res://MapGOOD.png" id="4_ibxbd"]
 [ext_resource type="Texture2D" uid="uid://belpmp10yauth" path="res://door.png" id="4_n8sj8"]
+[ext_resource type="ButtonGroup" uid="uid://rxq8t308mqru" path="res://buttongroups/new_button_group.tres" id="5_6fiqa"]
 [ext_resource type="Texture2D" uid="uid://baejb4a6xlo2t" path="res://icon.png" id="5_uobvl"]
 [ext_resource type="Script" uid="uid://hit2y565eqwy" path="res://scripts/doorleft.gd" id="6_oirdo"]
 [ext_resource type="Script" uid="uid://cjxvgl5wqvchd" path="res://scripts/camera_system.gd" id="7_omgmk"]
@@ -179,7 +180,9 @@ offset_bottom = 174.0
 theme = SubResource("Theme_ibxbd")
 theme_override_font_sizes/font_size = 46
 toggle_mode = true
+button_pressed = true
 action_mode = 0
+button_group = ExtResource("5_6fiqa")
 text = "C1"
 icon = ExtResource("5_uobvl")
 icon_alignment = 1
@@ -195,6 +198,7 @@ theme = SubResource("Theme_ibxbd")
 theme_override_font_sizes/font_size = 46
 toggle_mode = true
 action_mode = 0
+button_group = ExtResource("5_6fiqa")
 text = "C2"
 icon = ExtResource("5_uobvl")
 icon_alignment = 1
@@ -210,6 +214,7 @@ theme = SubResource("Theme_ibxbd")
 theme_override_font_sizes/font_size = 46
 toggle_mode = true
 action_mode = 0
+button_group = ExtResource("5_6fiqa")
 text = "C3"
 icon = ExtResource("5_uobvl")
 icon_alignment = 1
@@ -225,6 +230,7 @@ theme = SubResource("Theme_ibxbd")
 theme_override_font_sizes/font_size = 46
 toggle_mode = true
 action_mode = 0
+button_group = ExtResource("5_6fiqa")
 text = "C4"
 icon = ExtResource("5_uobvl")
 icon_alignment = 1
@@ -240,6 +246,7 @@ theme = SubResource("Theme_ibxbd")
 theme_override_font_sizes/font_size = 46
 toggle_mode = true
 action_mode = 0
+button_group = ExtResource("5_6fiqa")
 text = "C5"
 icon = ExtResource("5_uobvl")
 icon_alignment = 1
@@ -255,6 +262,7 @@ theme = SubResource("Theme_ibxbd")
 theme_override_font_sizes/font_size = 46
 toggle_mode = true
 action_mode = 0
+button_group = ExtResource("5_6fiqa")
 text = "C6"
 icon = ExtResource("5_uobvl")
 icon_alignment = 1
