@@ -286,6 +286,10 @@ size = Vector3(11, 1, 15)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89481, -4)
 size = Vector3(11, 0.155151, 15)
 
+[node name="BackWall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.601185, 1.98496)
+size = Vector3(11, 2.7424, 0.93103)
+
 [node name="Desk" type="Node3D" parent="."]
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Desk"]
@@ -426,7 +430,22 @@ shape = SubResource("BoxShape3D_euq7m")
 script = ExtResource("7_omgmk")
 
 [node name="Cam1" type="Camera3D" parent="CameraSystem"]
-transform = Transform3D(-0.937925, 0.125876, -0.323189, 3.1728e-08, 0.931818, 0.362926, 0.346837, 0.340397, -0.873976, 0, -5.17854, -4.599)
+transform = Transform3D(-0.908464, -0.151689, 0.389465, 3.27472e-08, 0.931818, 0.362925, -0.417962, 0.329705, -0.846524, 6.85619, -5.17854, -4.599)
+
+[node name="Cam2" type="Camera3D" parent="CameraSystem"]
+transform = Transform3D(0.994282, 0.038755, -0.0995043, 3.87161e-08, 0.931818, 0.362926, 0.106785, -0.36085, 0.92649, -15.6158, -5.29898, -1.72546)
+
+[node name="Cam3" type="Camera3D" parent="CameraSystem"]
+transform = Transform3D(-0.092266, -0.361377, 0.927843, 3.87161e-08, 0.931818, 0.362926, -0.995734, 0.0334857, -0.0859751, -10.7614, -5.01423, -33.4168)
+
+[node name="Cam4" type="Camera3D" parent="CameraSystem"]
+transform = Transform3D(-0.937925, 0.125876, -0.323189, 3.1728e-08, 0.931818, 0.362926, 0.346837, 0.340397, -0.873976, 1.10159, -5.23738, -46.0576)
+
+[node name="Cam5" type="Camera3D" parent="CameraSystem"]
+transform = Transform3D(-0.992593, 0.0440911, -0.113205, 1.66414e-08, 0.931818, 0.362925, 0.121488, 0.360237, -0.924916, -33.6602, -5.23738, -45.4994)
+
+[node name="Cam6" type="Camera3D" parent="CameraSystem"]
+transform = Transform3D(-0.985686, -0.0611866, 0.157098, 3.87161e-08, 0.931818, 0.362925, -0.168593, 0.357731, -0.91848, 21.9756, -5.23738, -45.7885)
 
 [node name="Area3D" type="Area3D" parent="CameraSystem"]
 
@@ -435,7 +454,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21891, 0.0855408, -1.12717
 shape = SubResource("BoxShape3D_cpm77")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CameraSystem/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 0.103354, 0, 0, 0, 0.473143, -0.218955, 0.0388708, -1.14757)
+transform = Transform3D(1, 0, 0, 0, 0.0425646, 0, 0, 0, 0.473143, -0.218955, 0.0727588, -1.14757)
 material_override = SubResource("StandardMaterial3D_cpm77")
 mesh = SubResource("BoxMesh_omgmk")
 
@@ -453,29 +472,212 @@ mesh = SubResource("BoxMesh_ibxbd")
 transform = Transform3D(0.602479, -0.117304, -7.57462e-09, -5.24816e-16, -2.95897e-08, 1, -0.106006, -0.666693, -4.30501e-08, -0.346653, 0.0950744, -1.13749)
 text = "cameras lol"
 
-[node name="SpotLight3D" type="SpotLight3D" parent="CameraSystem"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -3.94867, -2.58008)
-
 [node name="Cam1Stuffs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29877, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cam1Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.163943, -3.91503, -3.10891)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Cam1Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.78863, -3.91503, -3.10891)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cam1Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.20829, -3.91503, -3.10891)
 
 [node name="Floor2" type="CSGBox3D" parent="Cam1Stuffs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.20476, -1.73792)
-size = Vector3(11, 1, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.632813, -7.20476, -1.73792)
+size = Vector3(12.2656, 1, 15)
 
 [node name="Box" type="CSGBox3D" parent="Cam1Stuffs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.634361, -6.07557, 0.444208)
-size = Vector3(6.74144, 2.72308, 3.91895)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12551, -6.07557, 0.444208)
+size = Vector3(9.72375, 2.72308, 3.91895)
 
 [node name="Box2" type="CSGBox3D" parent="Cam1Stuffs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84282, -6.07557, -2.13746)
 size = Vector3(3.0122, 2.72308, 9.08228)
+
+[node name="Cam2Stuffs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3322, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cam2Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.49606, -3.53508, -3.32188)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Cam2Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.49606, -4.19187, -7.54573)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cam2Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.49606, -4.19187, -11.589)
+
+[node name="Floor2" type="CSGBox3D" parent="Cam2Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.20476, -4.32093)
+size = Vector3(11, 1, 20.166)
+
+[node name="Box" type="CSGBox3D" parent="Cam2Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.634361, -6.07557, 0.444208)
+size = Vector3(6.74144, 2.72308, 3.91895)
+
+[node name="Box2" type="CSGBox3D" parent="Cam2Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84282, -6.07557, -9.22074)
+size = Vector3(3.0122, 2.72308, 9.08228)
+
+[node name="Box4" type="CSGBox3D" parent="Cam2Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.502852, -6.07557, -16.4815)
+size = Vector3(7.69214, 2.72308, 0.137269)
+
+[node name="Box3" type="CSGBox3D" parent="Cam2Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.39058, -6.07557, -9.11629)
+size = Vector3(3.0122, 2.72308, 9.08228)
+
+[node name="Cam3Stuffs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9754, 0, -28.5558)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Cam3Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.122475, -2.94952, -5.79059)
+light_energy = 2.0
+light_specular = 16.0
+spot_angle = 41.8053
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Cam3Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.122475, -2.94952, -2.37191)
+light_energy = 2.0
+light_specular = 16.0
+spot_angle = 41.8053
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cam3Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.32778, -4.19187, -9.31941)
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Cam3Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.32778, -4.19187, 1.48253)
+
+[node name="Floor2" type="CSGBox3D" parent="Cam3Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.20476, -4.32093)
+size = Vector3(11, 1, 20.166)
+
+[node name="Box" type="CSGBox3D" parent="Cam3Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47393, -6.07557, 2.03131)
+size = Vector3(5.04425, 2.72308, 4.07654)
+
+[node name="Box4" type="CSGBox3D" parent="Cam3Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08487, -6.07557, 2.03131)
+size = Vector3(3, 2.72308, 4.07654)
+
+[node name="Box2" type="CSGBox3D" parent="Cam3Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48472, -6.04978, -10.5607)
+size = Vector3(5.04425, 2.72308, 4.8739)
+
+[node name="Box5" type="CSGBox3D" parent="Cam3Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16406, -6.04978, -10.5607)
+size = Vector3(3.22153, 2.72308, 4.8739)
+
+[node name="Box3" type="CSGBox3D" parent="Cam3Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.39058, -6.07557, -4.90789)
+size = Vector3(3.0122, 2.72308, 11.3971)
+
+[node name="Cam4Stuffs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53205, 0, -32.0167)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cam4Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.313199, -3.75365, -10.2647)
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Cam4Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.313199, -3.75365, -5.3334)
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Cam4Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.313199, -3.75365, -0.0587692)
+
+[node name="Floor2" type="CSGBox3D" parent="Cam4Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.20476, -4.32093)
+size = Vector3(11, 1, 20.166)
+
+[node name="Box5" type="CSGBox3D" parent="Cam4Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15268, -6.04978, -12.7404)
+size = Vector3(3.22153, 2.72308, 3.15714)
+
+[node name="Box6" type="CSGBox3D" parent="Cam4Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15268, -6.04978, -1.29286)
+size = Vector3(3.22153, 2.72308, 15.9446)
+
+[node name="Box7" type="CSGBox3D" parent="Cam4Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27227, -6.04978, 12.1133)
+size = Vector3(6.98235, 2.72308, 1.58888)
+
+[node name="Box3" type="CSGBox3D" parent="Cam4Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49814, -6.07557, -4.57127)
+size = Vector3(3.0122, 2.72308, 18.9262)
+
+[node name="Cam5Stuffs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1432, 0, -32.0167)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cam5Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.261908, -3.75365, -9.5731)
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Cam5Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.931435, -3.75365, -4.5184)
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Cam5Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.348244, -3.75365, 1.31913)
+
+[node name="Floor2" type="CSGBox3D" parent="Cam5Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.20476, -4.32093)
+size = Vector3(11, 1, 20.166)
+
+[node name="Box5" type="CSGBox3D" parent="Cam5Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15268, -6.04978, -12.6917)
+size = Vector3(3.22153, 2.72308, 3.25447)
+
+[node name="Box6" type="CSGBox3D" parent="Cam5Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15268, -6.04978, -0.543034)
+size = Vector3(3.22153, 2.72308, 14.445)
+
+[node name="Box7" type="CSGBox3D" parent="Cam5Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27227, -6.04978, 12.1133)
+size = Vector3(6.98235, 2.72308, 1.58888)
+
+[node name="Box3" type="CSGBox3D" parent="Cam5Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0464, -6.07557, 1.11751)
+size = Vector3(3.0122, 2.72308, 7.54863)
+
+[node name="Box4" type="CSGBox3D" parent="Cam5Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0464, -6.07557, -10.5244)
+size = Vector3(3.0122, 2.72308, 7.01998)
+
+[node name="Cam6Stuffs" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5486, 0, -32.0167)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cam6Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.313199, -3.75365, -10.2647)
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Cam6Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.313199, -3.75365, -5.3334)
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Cam6Stuffs"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.313199, -3.75365, -0.0587692)
+
+[node name="Floor2" type="CSGBox3D" parent="Cam6Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.20476, -4.32093)
+size = Vector3(11, 1, 20.166)
+
+[node name="Box5" type="CSGBox3D" parent="Cam6Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15268, -6.04978, -12.7404)
+size = Vector3(3.22153, 2.72308, 3.15714)
+
+[node name="Box6" type="CSGBox3D" parent="Cam6Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15268, -6.04978, -1.29286)
+size = Vector3(3.22153, 2.72308, 15.9446)
+
+[node name="Box7" type="CSGBox3D" parent="Cam6Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27227, -6.04978, 12.1133)
+size = Vector3(6.98235, 2.72308, 1.58888)
+
+[node name="Box3" type="CSGBox3D" parent="Cam6Stuffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49814, -6.07557, -4.57127)
+size = Vector3(3.0122, 2.72308, 18.9262)
 
 [connection signal="input_event" from="CharacterBody3D" to="CameraSystem" method="_on_character_body_3d_input_event"]
 [connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect" to="CharacterBody3D" method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect2" to="CharacterBody3D" method="_on_texture_rect_2_mouse_entered"]
 [connection signal="mouse_entered" from="CharacterBody3D/Camera3D/Control/TextureRect3" to="CharacterBody3D" method="_on_texture_rect_3_mouse_entered"]
 [connection signal="pressed" from="CharacterBody3D/Camera3D/Control/CamSystemUI/ExitButton" to="CameraSystem" method="_on_exit_button_pressed"]
-[connection signal="pressed" from="CharacterBody3D/Camera3D/Control/CamSystemUI/Cam1" to="CameraSystem" method="_on_camera_button_pressed"]
 [connection signal="timeout" from="ClockBase/Second" to="." method="_on_second_timeout"]
 [connection signal="input_event" from="RightSide/DoorRight/ButtonR/Area3D" to="RightSide/DoorRight" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="LeftSide/DoorLeft/ButtonL/Area3D" to="LeftSide/DoorLeft" method="_on_area_3d_input_event"]

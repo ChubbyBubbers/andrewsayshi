@@ -26,6 +26,7 @@ func _hideAll() -> void:
 	_hide(left)
 	_hide(right)
 	_hide(down)
+	_hide(camSystemUI)
 
 func _unhideAll() -> void:
 	_unhide(left)
